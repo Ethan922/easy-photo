@@ -1,0 +1,62 @@
+# ===== Java / Spring Boot =====
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+replay_pid*
+
+# Maven / Gradle
+.mvn/timing.properties
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Spring Boot local config
+application-local.yml
+application-local.yaml
+application-local.properties
+
+# ===== Node / Vue3 =====
+node_modules/
+dist/
+dist-ssr/
+*.local
+.npm
+.pnpm-store/
+.yarn/
+coverage/
+
+# Vite / build cache
+.vite/
+.cache/
+
+# ===== 上传的图片（本地磁盘存储）=====
+uploads/
+upload/
+
+# ===== 环境变量 =====
+.env
+.env.*
+!.env.example
+
+# ===== IDE =====
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+!.vscode/extensions.json
+.settings/
+.project
+.classpath
+
+# ===== 操作系统 =====
+.DS_Store
+Thumbs.db
+desktop.ini
