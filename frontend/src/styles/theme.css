@@ -1,0 +1,61 @@
+/* 易拍主题：淡黄主色 + 莫兰迪 / 米白色系 */
+:root {
+  /* 主色：淡黄 */
+  --ep-primary: #e8c86a;
+  --ep-primary-soft: #f3e2a9;
+  --ep-primary-deep: #cda94a;
+
+  /* 背景：米白 */
+  --ep-bg: #fbf8f0;
+  --ep-bg-card: #fffdf7;
+
+  /* 莫兰迪辅助色 */
+  --ep-morandi-green: #a8b5a2;
+  --ep-morandi-blue: #9fb0bd;
+  --ep-morandi-pink: #cbb4b0;
+  --ep-morandi-gray: #b7b3ab;
+
+  /* 文本 */
+  --ep-text: #5b5647;
+  --ep-text-light: #8c8676;
+  --ep-border: #ece4d0;
+}
+
+/* 覆盖 Element Plus 主色为淡黄 */
+:root {
+  --el-color-primary: var(--ep-primary);
+  --el-color-primary-light-3: var(--ep-primary-soft);
+  --el-color-primary-light-5: #f6e9bd;
+  --el-color-primary-light-7: #faf1d4;
+  --el-color-primary-light-9: #fdf9ec;
+  --el-color-primary-dark-2: var(--ep-primary-deep);
+}
+
+html, body, #app {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  background: var(--ep-bg);
+  color: var(--ep-text);
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+}
+
+.ep-card {
+  background: var(--ep-bg-card);
+  border: 1px solid var(--ep-border);
+  border-radius: 12px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.ep-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(205, 169, 74, .15);
+}
+
+.ep-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}

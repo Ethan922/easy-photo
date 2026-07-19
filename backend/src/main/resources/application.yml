@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: easy-photo-backen
+  datasource:
+    url: jdbc:mysql://home.com:3306/easy_photo?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# 应用自定义配置
+app:
+  # 图片上传的本地磁盘目录（绝对路径或相对启动目录）
+  upload-dir: ./uploads
+  # 图片对外访问的 URL 前缀
+  upload-url-prefix: /uploads/
+  # 初始管理员账号
+  admin:
+    username: admin
+    password: admin123
+  jwt:
+    # HMAC 密钥（生产环境应通过环境变量注入）
+    secret: easy-photo-jwt-secret-key-please-change-in-production-0123456789
+    # 令牌有效期（毫秒），默认 7 天
+    expiration: 604800000
