@@ -30,6 +30,6 @@
 ## Impact
 
 - 全新代码库：后端 Java 8 + Spring Boot + MySQL；前端 Vue3 + Element Plus。
-- 数据库：新建 `easy_photo` 库及 user、category、dimension、tutorial、tutorial_dimension、favorite、like 等表（均含 `deleted`）。
+- 数据库：新建 `easy_photo` 库及 user、category、dimension、tutorial、tutorial_dimension、tutorial_favorite、tutorial_like 等表（均含 `deleted`）。
 - 依赖：Spring Boot、Spring Security/JWT 库、MyBatis 或 JPA、mysql-connector-j；前端 Vue3、Element Plus、Vue Router、Pinia、Axios、富文本编辑器。
 - 部署：后端提供本地磁盘图片目录并对外暴露访问路径；前端通过代理访问后端 API。

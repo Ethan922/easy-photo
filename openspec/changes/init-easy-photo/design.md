@@ -21,7 +21,7 @@
 后端采用 Controller → Service → Mapper(DAO) 分层，DTO 与实体分离。选用 **MyBatis-Plus**：其内置逻辑删除（`@TableLogic`）、分页插件与条件构造器，契合本项目「全表逻辑删除 + 简单 CRUD」的需求，比 JPA 更贴合 SQL 直觉。备选 Spring Data JPA 被否，因逻辑删除与动态查询处理更繁琐。
 
 ### 数据模型
-7 张表：`user`、`category`、`dimension`、`tutorial`、`tutorial_dimension`、`favorite`、`like`（`like` 为 MySQL 关键字，建表用反引号或改名 `tutorial_like`，此处采用 `tutorial_like` 避免转义）。教程与维度多对多经 `tutorial_dimension`。所有表含 `deleted TINYINT DEFAULT 0`。
+7 张表：`user`、`category`、`dimension`、`tutorial`、`tutorial_dimension`、`tutorial_favorite`、`tutorial_like`（`favorite`、`like` 统一加 `tutorial_` 前缀，其中 `like` 亦为 MySQL 关键字，前缀命名一并规避）。教程与维度多对多经 `tutorial_dimension`。所有表含 `deleted TINYINT DEFAULT 0`。
 - 唯一性：`category.name`、`dimension(category_id, name)` 仅对未删除记录唯一。MySQL 不支持带条件的唯一索引，故采用**应用层校验 + 普通索引**，不使用数据库唯一约束，避免与软删除历史记录冲突。
 - `tutorial` 冗余 `like_count`、`favorite_count` 统计字段，互动时增量维护。
 
@@ -43,7 +43,7 @@ Vue3 + Vite + Vue Router + Pinia + Axios。Element Plus 组件库，主题定制
 - **XSS（富文本存 HTML）** → 后端存储前用白名单清洗（如 jsoup），前端渲染受控。
 - **本地磁盘存图不利于水平扩展/备份** → 当前单机可接受；目录与访问路径通过配置隔离，后续可替换为对象存储。
 - **统计字段与关系表可能不一致** → 增减在同一事务内完成；提供校对手段兜底。
-- **`like` 关键字** → 表名用 `tutorial_like` 规避。
+- **表名统一前缀** → `favorite`、`like` 统一命名为 `tutorial_favorite`、`tutorial_like`，同时规避 `like` 关键字冲突。
 
 ## Migration Plan
 

@@ -121,8 +121,8 @@
 | dimension | 二级维度 | id、category_id、name（同分类内唯一）、deleted、created_at |
 | tutorial | 教程 | id、title、cover_url、content（富文本）、visibility、author_id、like_count、favorite_count、deleted、created_at、updated_at |
 | tutorial_dimension | 教程-维度关系 | id、tutorial_id、dimension_id、deleted |
-| favorite | 收藏 | id、user_id、tutorial_id、deleted、created_at |
-| like | 点赞 | id、user_id、tutorial_id、deleted、created_at |
+| tutorial_favorite | 收藏 | id、user_id、tutorial_id、deleted、created_at |
+| tutorial_like | 点赞 | id、user_id、tutorial_id、deleted、created_at |
 
 > 说明：教程与维度为**多对多关系**，通过 `tutorial_dimension` 关系表维护，教程本身不再持有固定的分类字段。`content` 存储富文本（HTML 或结构化 JSON，实现时确定），其中内嵌图片保存为指向本地磁盘的访问路径 / URL。
 >

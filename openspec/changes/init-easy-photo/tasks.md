@@ -1,7 +1,7 @@
 ## 1. 数据库与初始化
 
 - [ ] 1.1 创建数据库 `easy_photo`
-- [ ] 1.2 编写建表 SQL：user、category、dimension、tutorial、tutorial_dimension、favorite、tutorial_like，均含 `deleted`、时间字段及必要索引
+- [ ] 1.2 编写建表 SQL：user、category、dimension、tutorial、tutorial_dimension、tutorial_favorite、tutorial_like，均含 `deleted`、时间字段及必要索引
 - [ ] 1.3 编写 seed 脚本：初始管理员账号、预置分类（风格/姿势/色调）及示例维度
 - [ ] 1.4 将 SQL 脚本纳入仓库（如 `backend/src/main/resources/db/`）
 
@@ -49,7 +49,7 @@
 
 ## 8. 互动（engagement）
 
-- [ ] 8.1 实体与 Mapper：favorite、tutorial_like
+- [ ] 8.1 实体与 Mapper：tutorial_favorite、tutorial_like
 - [ ] 8.2 收藏/取消收藏：幂等、逻辑删除、事务内维护 favorite_count
 - [ ] 8.3 点赞/取消点赞：幂等、逻辑删除、事务内维护 like_count
 - [ ] 8.4 收藏页：当前用户收藏且可见的教程列表
